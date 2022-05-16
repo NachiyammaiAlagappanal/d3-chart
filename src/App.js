@@ -1,9 +1,15 @@
 import { React } from 'react';
 import './App.scss';
+import BarChart from './components/barChart';
 
-const App = () =>
-	<div className="App" role="App">
-		Ready to start.
-	</div>;
+const App = (context) => {
+	const { config } = context;
+
+	return (
+		<div className="App" role="App">
+			<BarChart{ ...{ ...context, data: config.data } }/>
+		</div>
+	);
+};
 
 export default App;
